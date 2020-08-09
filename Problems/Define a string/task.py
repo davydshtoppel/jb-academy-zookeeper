@@ -1,1 +1,0 @@
-holiday = 'Cinnamon Roll Day'
