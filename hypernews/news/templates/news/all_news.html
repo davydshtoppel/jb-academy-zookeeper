@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hyper news</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <h2>Hyper news</h2>
+    {% for date, news in news_by_date.items %}
+        <h4>{{ date|date:"Y-m-d" }}</h4>
+        <ul>
+            {% for it in news %}
+                <li><a target="_blank" href="/news/{{ it.link }}/">{{ it.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+    <a target="_blank" href="/news/create/">Create news</a>
+</body>
+<body>
